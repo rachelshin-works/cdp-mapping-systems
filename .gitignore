@@ -6,6 +6,8 @@
 # Local data + scratch (download data separately, not via git)
 content/**/Data/
 content/**/cache/
+**/images/
+**/Data/
 
 # prof-only drafts, not for students
 planning/
