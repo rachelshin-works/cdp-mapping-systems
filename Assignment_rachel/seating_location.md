@@ -21,8 +21,12 @@ Chinatown is where I see this vividly, every day. Street vendors line the sidewa
 **seating location** : NYC Open Data / type_Point(Lan, Lon), Asset_Subtype(*maybe seating objects' design will be needed*), Installation date
 **MTA turnstile Data** : for the purpose of checking the influx of people - date, station, time, entries/exists
 
+---
+
 ## iii) potential dataset
 using Kobo box, will collect location(lon, lat) point with photos to gather an informal/undocumented seating location
+
+---
 
 ### iv) workflow
 *i used AI to format a chart in md*
@@ -50,6 +54,6 @@ flowchart TD
 ```
 ---
 
-## question
+## v) question
 - is it appropriate to collect location/photo data on people(vendors) this way, even in a public-space, research context?
 - MTA ridership measures people entering/existing the station, not necessarily people walking past the vendor or corridor -- would this data set is necessary?
