@@ -8,6 +8,8 @@ content/**/Data/
 content/**/cache/
 **/images/
 **/Data/
+**/cache/
+**/style.json
 
 # prof-only drafts, not for students
 planning/

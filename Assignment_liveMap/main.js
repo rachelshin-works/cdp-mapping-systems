@@ -13,6 +13,13 @@ map.on("load", () => {
   fetch("https://data.cityofnewyork.us/resource/43nn-pn8j.geojson?$limit=50000")
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
+      data.features.forEach((feature) => {
+        feature.geometry = {
+          type: "Point",
+          coordinates: [feature.properties.longitude, feature.properties.latitude],
+        };
+      });
       map.addSource("restaurants", {
         type: "geojson",
         data: data,
@@ -24,11 +31,21 @@ map.on("load", () => {
         source: "restaurants",
         paint: {
           "circle-radius": 4,
-          "circle-color": "#F54927",
+          "circle-color": ["match", ["get", "cuisine_description"], "Pizza", "#F54927", "#000000"],
           // "circle-stroke-width": 1,
           // "circle-stroke-color": "#27D3F5",
         },
       });
-    })
-    .catch((error) => console.error("Error fetching data:", error));
+
+      map.on("click", "restaurants-layer", (e) => {
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        const description = e.features[0].properties.dba;
+        const score = e.features[0].properties.score;
+
+        new maplibregl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(`<strong>${description}</strong>`)
+          .addTo(map);
+      });
+    });
 });
