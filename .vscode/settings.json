@@ -9,7 +9,11 @@
   "black-formatter.showNotifications": "always",
   "notebook.formatOnSave.enabled": true,
   "notebook.formatOnCellExecution": true,
-  // this is extra but will help
   "notebook.diff.ignoreMetadata": true,
-  "python-envs.defaultEnvManager": "ms-python.python:system"
+  "python.defaultInterpreterPath": "/Users/rachelshin/anaconda3/envs/cdp/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "jupyter.kernels.excludePythonEnvironments": [
+    "/opt/homebrew/bin/python3.13",
+    "/Users/rachelshin/anaconda3/bin/python"
+  ]
 }
